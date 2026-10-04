@@ -1,0 +1,48 @@
+# Variáveis de ambiente e segredos
+.env
+.env.*
+!.env.example
+
+# Python: cache e arquivos compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
+
+# Testes, cobertura e análise estática
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+
+# Builds e pacotes Python
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Bancos de dados e logs locais
+*.sqlite
+*.sqlite3
+*.db
+*.log
+
+# IDEs e sistema operacional
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

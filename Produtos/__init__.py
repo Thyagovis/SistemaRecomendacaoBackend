@@ -1,0 +1,1 @@
+"""Modelos relacionados aos produtos."""
