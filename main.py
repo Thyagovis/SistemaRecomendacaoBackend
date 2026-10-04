@@ -7,6 +7,8 @@ from Core.db import Base, engine
 from Produtos.Model import Product
 from Usuarios.Model import User
 from PerfisUsuarios.Model import UserProfile
+from fastapi.middleware.cors import CORSMiddleware
+from Core.config import Settings
 
 from Produtos.Controller import router as produto_router
 from Usuarios.Controller import router as usuario_router
@@ -26,3 +28,11 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="Sistema de Recomendação", lifespan=lifespan)
 app.include_router(produto_router)
 app.include_router(usuario_router)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins= Settings.origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
