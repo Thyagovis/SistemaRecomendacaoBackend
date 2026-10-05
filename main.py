@@ -8,7 +8,7 @@ from Produtos.Model import Product
 from Usuarios.Model import User
 from PerfisUsuarios.Model import UserProfile
 from fastapi.middleware.cors import CORSMiddleware
-from Core.config import Settings
+from Core.config import settings
 
 from Produtos.Controller import router as produto_router
 from Usuarios.Controller import router as usuario_router
@@ -31,7 +31,7 @@ app.include_router(usuario_router)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins= Settings.origins,
+    allow_origins= settings.origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
